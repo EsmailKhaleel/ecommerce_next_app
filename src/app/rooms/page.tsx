@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './rooms.module.css';
-import { rooms } from './[id]/page';
 import { Room } from '@/types/room';
 import FilterRooms from '@/components/filterRooms/filterRooms';
+import { rooms } from '@/rooms-data/rooms-data';
 
 interface props {
   searchParams: Promise<{ capacity: string }>;

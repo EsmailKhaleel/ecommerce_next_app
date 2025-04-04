@@ -5,8 +5,9 @@ import { useAppSelector, useAppDispatch } from '@/redux/hooks'
 import { removeFromCart, clearCart } from '@/redux/slices/cartSlice'
 import Link from 'next/link'
 import ProductCard from '@/components/product-card/product-card'
+import { Session } from 'next-auth'
 
-export default function CartPageClient({ session } : any) {
+export default function CartPageClient({ session } : { session: Session}) {
   const dispatch = useAppDispatch();
   const { items: cartItems, totalAmount } = useAppSelector(state => state.cart);
 

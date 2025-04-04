@@ -81,7 +81,7 @@ const PriceFilterComponent = () => {
             <button
                 className={styles.priceFilter}
                 onClick={() => setIsOpen(!isOpen)}
-                // onKeyDown={handleKeyDown}
+                onKeyDown={handleKeyDown}
                 aria-haspopup="listbox"
                 aria-expanded={isOpen}
                 aria-labelledby="price-filter-label"

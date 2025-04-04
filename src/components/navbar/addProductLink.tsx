@@ -1,11 +1,10 @@
 "use client"
 import MultiStepForm from '../add-product-form/add-product-form';
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './navbar.module.css';
-import { auth } from '@/util/auth';
-import { useRouter } from 'next/router';
+import { Session } from 'next-auth';
 
-export default function AddProductLink({ session }: { session: any }) {
+export default function AddProductLink({ session }: { session: Session | null }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <div>

@@ -10,7 +10,7 @@ import Image from "next/image";
 const MultiStepForm = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [previewImages, setPreviewImages] = useState<string[]>([]);
+  // const [previewImages, setPreviewImages] = useState<string[]>([]);
   const [toast, setToast] = useState<{
     show: boolean;
     message: string;
@@ -69,11 +69,11 @@ const MultiStepForm = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
     setStep((prevStep) => prevStep - 1);
   }, []);
 
-  const handleImagePreview = useCallback((imageUrl: string) => {
-    if (imageUrl) {
-      setPreviewImages((prev) => [...prev, imageUrl]);
-    }
-  }, []);
+  // const handleImagePreview = useCallback((imageUrl: string) => {
+  //   if (imageUrl) {
+  //     setPreviewImages((prev) => [...prev, imageUrl]);
+  //   }
+  // }, []);
 
   async function addProduct(product: Product) {
     setIsSubmitting(true);
@@ -325,7 +325,7 @@ const MultiStepForm = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
                       <button
                         type="button"
                         className="preview-button"
-                        onClick={() => handleImagePreview(values.image)}
+                        // onClick={() => handleImagePreview(values.image)}
                         disabled={!values.image}
                       >
                         Preview
@@ -349,7 +349,7 @@ const MultiStepForm = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
                       name="additionalImages"
                       className="form-textarea"
                       placeholder="https://example.com/image1.jpg, https://example.com/image2.jpg"
-                      value={values.images.join(", ")}
+                      value={values.images?.join(", ")}
                       onChange={(e) => handleImagesStringChange(e, setFieldValue)}
                       rows={5}
                     />
@@ -365,7 +365,7 @@ const MultiStepForm = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
                             type="button"
                             className="remove-image"
                             onClick={() => {
-                              const newImages = values.images.filter((_, i) => i !== index);
+                              const newImages = values.images?.filter((_, i) => i !== index);
                               setFieldValue("images", newImages);
                             }}
                           >

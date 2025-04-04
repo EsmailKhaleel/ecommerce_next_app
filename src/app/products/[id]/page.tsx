@@ -13,7 +13,8 @@ export default async function ProductDetailsPage({ params }: { params: Promise<{
     if (!product) {
       return notFound();
     }
-    return <ProductDetailsClient product={product} session={session} />;
+  
+    return <ProductDetailsClient product={product} session={session || null} />;
   } catch (error) {
     console.error('Failed to fetch product:', error);
     return notFound();

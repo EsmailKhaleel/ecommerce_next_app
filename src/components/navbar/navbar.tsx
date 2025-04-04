@@ -6,6 +6,7 @@ import styles from './navbar.module.css';
 import NavLinks from './navLinks';
 import AddProductLink from './addProductLink';
 import { AiOutlineWeiboCircle, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { Session } from 'next-auth';
 
 const navLinks = [
   { to: '/rooms', label: 'Rooms' },
@@ -15,7 +16,7 @@ const navLinks = [
   { to: '/cart', label: 'Cart' },
 ];
 
-export default function Navbar({ session }: { session: any }) {
+export default function Navbar({ session }: { session: Session | null }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const extendedNavLinks = session
     ? [...navLinks, { to: '/logout', label: 'Logout' }]

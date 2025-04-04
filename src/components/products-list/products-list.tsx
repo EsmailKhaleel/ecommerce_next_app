@@ -6,8 +6,9 @@ import { useSearchParams } from 'next/navigation';
 import React from 'react'
 import ProductCard from '../product-card/product-card';
 import styles from './products-list.module.css';
+import { Session } from 'next-auth';
 
-export default function ProductsList({ products, session }: { products: Product[], session: any }) {
+export default function ProductsList({ products, session }: { products: Product[], session: Session | null }) {
     const dispatch = useAppDispatch();
     const handleAddToCart = (product: Product) => {
         dispatch(addToCart(product));

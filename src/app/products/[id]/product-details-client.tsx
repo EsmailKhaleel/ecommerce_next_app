@@ -10,9 +10,10 @@ import Link from 'next/link'
 import { api } from '@/apiClient/apiClient'
 import { Toast } from '@/components/Toast/Toast'
 import { Product } from '@/types/product'
+import { Session } from 'next-auth'
 
 
-export default function ProductDetailsClient({ session, product }: { session: any, product: Product }) {
+export default function ProductDetailsClient({ session, product }: { session: Session | null , product: Product }) {
   const dispatch = useAppDispatch();
   const [isExpaned, setIsExpaned] = useState(true);
   const [toast, setToast] = useState<{ show: boolean; message: string; type: 'success' | 'error'; }>({
