@@ -1,0 +1,108 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #111;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.roomGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+.roomCard {
+  background: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.roomCard:hover {
+  transform: translateY(-5px);
+  border-color: #2563eb;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.roomCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.roomCard:hover::before {
+  transform: scaleX(1);
+}
+
+.roomTitle {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.roomDescription {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.viewButton {
+  display: inline-block;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.viewButton:hover {
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+  transform: translateX(5px);
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .roomGrid {
+    gap: 1rem;
+  }
+
+  .roomCard {
+    padding: 1rem;
+  }
+}

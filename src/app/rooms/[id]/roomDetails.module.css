@@ -1,0 +1,95 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #fff;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #66b3ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+  color: #99ccff;
+}
+
+.roomContainer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #e6e6e6;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.detailsText {
+  color: #e6e6e6;
+  margin: 0.5rem 0;
+}
+
+.amenitiesList {
+  list-style: none;
+  padding: 0;
+}
+
+.amenitiesList li {
+  color: #e6e6e6;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.amenitiesList li:last-child {
+  border-bottom: none;
+}
+
+.bookButton {
+  background-color: #3399ff;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bookButton:hover {
+  background-color: #1a8cff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,116 @@
+/* PriceFilter.module.css */
+.priceFilterContainer {
+    position: relative;
+    display: inline-block;
+    min-width: 200px;
+  }
+  
+  .priceFilter {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .priceFilter:after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.8rem;
+    height: 0.8rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .priceFilterContainer:has(.priceFilter[aria-expanded="true"]):after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  
+  .priceFilter:hover {
+    border-color: #3b82f6;
+    background-color: #252525;
+    transform: translateY(-1px);
+  }
+  
+  .priceFilter:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+  
+  .priceFilter:active {
+    transform: translateY(0);
+  }
+  
+  .priceFilterDropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    max-height: 300px;
+    overflow-y: auto;
+    animation: fadeIn 0.15s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .priceFilterDropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .priceFilterOption {
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    color: white;
+  }
+  
+  .priceFilterOption:hover {
+    background-color: #2d2d2d;
+  }
+  
+  .priceFilterOption.selected {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+    font-weight: 500;
+  }
+  
+  .priceFilterOption:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .priceFilterOption:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  /* Disabled state */
+  .priceFilter:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #181818;
+  }

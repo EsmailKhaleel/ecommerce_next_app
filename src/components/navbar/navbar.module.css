@@ -1,0 +1,100 @@
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #666;
+  padding: 0.5rem;
+}
+
+.navLinks a:hover {
+  color: #333;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.link.active {
+  color: #333;
+  font-weight: 600;
+  border-bottom: 2px solid #333;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+    padding: 20px;
+  }
+  .navLinks a {
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .navLinks a:hover {
+    color: black;
+  }
+  .navLinks.showMenu {
+    display: flex;
+    width: 100%;
+  }
+}
