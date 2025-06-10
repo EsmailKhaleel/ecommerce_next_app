@@ -69,7 +69,7 @@ class ApiClient {
 
 export const api = new ApiClient(BASE_URL);
 
-// Example usage
+// Example
 
 // const fetchSingleProduct = async (id: string) => {
 //   return await api.get<Product>(`/products/${id}`);
