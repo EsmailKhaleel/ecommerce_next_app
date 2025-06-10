@@ -6,6 +6,7 @@ import { Product } from '@/types/product'
 import { Toast } from '../Toast/Toast'
 import styles from './ProductCard.module.css'
 import { useAppSelector } from '@/redux/hooks'
+import placeholderImage from '../../../public/placeholder.jpg'
 
 interface ProductCardProps {
   product: Product;
@@ -95,13 +96,16 @@ export default function ProductCard({
       <div className={styles.card}>
         <div className={styles.imageContainer}>
           <Image
-            src={product.image || './icon.svg'}
+            src={product.image}
             alt={product.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             style={{ objectFit: 'cover' }}
             priority={index < 6}
             loading={(index ?? 0) >= 6 ? 'lazy' : undefined}
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = placeholderImage.src;
+            }}
           />
         </div>
         <div className={styles.details}>

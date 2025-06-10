@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import Image from 'next/image'
+import placeholderImage from '../../../../public/placeholder.jpg'
 import styles from './productDetails.module.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { addToCart } from '@/redux/slices/cartSlice'
@@ -93,7 +94,7 @@ export default function ProductDetailsClient({ session, product }: { session: Se
             centerSlidePercentage={100}
             labels={{ leftArrow: "Previous slide", rightArrow: "Next slide", item: "Slide item" }}
           >
-            {[...(product.image ? [product.image] : ["/placeholder.jpg"]), ...(product.images ?? [])].filter(Boolean).map((img, index) => (
+            {[...(product.image ? [product.image] : [placeholderImage.src]), ...(product.images ?? [])].filter(Boolean).map((img, index) => (
               <div key={index} className={styles.imageContainer}>
                 <Image
                   src={img}
