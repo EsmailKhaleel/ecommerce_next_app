@@ -1,4 +1,4 @@
-const BASE_URL = 'https://leeward-viridian-biplane.glitch.me';
+const BASE_URL = 'https://lackadaisical-quintessential-racer.glitch.me';
 
 interface FetchOptions extends RequestInit {
   timeout?: number;
