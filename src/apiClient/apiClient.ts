@@ -1,4 +1,4 @@
-const BASE_URL = 'https://json-server-project-production.up.railway.app';
+const BASE_URL = 'https://leeward-viridian-biplane.glitch.me';
 
 interface FetchOptions extends RequestInit {
   timeout?: number;
